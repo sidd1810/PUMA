@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+  .animation{
+  
+  position:relative;
+  animation-name: example;
+  animation-duration: 20s;
+}
+
+@keyframes example {
+  0%   { left:-100px; top:0px;}
+  25%  { left:50px; top:0px;}
+  
+}
+.navbaar{
+  
+  position:relative;
+  animation-name: oaoa;
+  animation-duration: 20s;
+}
+
+@keyframes oaoa{
+  0%   {  top:-100px; bottom: 0px;}
+  25%  { top:0px; bottom: 0px;}
+  
+}
+.kaka{
+  
+  position:relative;
+  animation-name: tata;
+  animation-duration: 10s;
+}
+
+@keyframes tata{
+  0%   {  left:700px; right: 0px;}
+  25%  {left:0px; right: 0px; }
+  
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+    </head>
+<body style="background-image: url(images.jpg);background-size: contain;">
+    <div class="w-100 border border-black  d-grid " style="color:whitesmoke;"> 
+    <div class="d-flex w-100 navbaar">
+      <div class="d-flex gap-5 px-5 my-auto">
+        <i class="bi bi-list "></i>
+        <h6>MEN</h6>
+        <h6>WOMEN</h6>
+        <h6>NEW</h6>
+      </div>
+      <div class=" mx-auto my-auto">
+         <img src="nikw123.png" alt="" style="width: 9.3rem;">
+      </div>
+      <div class="d-flex ms-auto my-auto gap-5 ">
+        <h6 class="my-2">SEARCH</h6>
+        <h6 class="my-2">BAG</h6>
+        <img src="pl.jpg" alt="" class="" style="width: 2rem;">
+      </div>
+    </div>
+    <div class="d-flex mt-5">
+        <div class="w-50 d-grid gap-2">
+         <div class=" animation  mx-auto">
+          <img src="peter-albanese-7fEgCk-1Hkw-unsplash-removebg-preview.png" alt="" class=" rounded-2 h-100 ">
+         </div>
+         <div class="d-flex w-100 gap-3 ">
+          <div class="">
+            <img src="peter-albanese-4LU3iZKQUsY-unsplash-removebg-preview.png" alt="" class="w-75">
+          </div>
+          <div class="animation">
+            <img src="peter-albanese-7fEgCk-1Hkw-unsplash-removebg-preview.png" alt="" class="w-75">
+          </div>
+          
+         </div>
+         </div>
+        
+         <div class="w-50   gap-5  p-5 " >
+         
+            <div class=" gap-5 w-100  ">
+        
+          <div class="kaka">
+            <div class="mb-5">
+            <h2>NIKE AIR 1</h2>
+           
+             </div>
+             <div>  
+                <h2>$169.00</h2>
+             </div>
+             
+            
+             <div class="d-grid gap-4 mt-4">
+                
+               <div class="d-flex gap-3">
+                <h4 class="my-auto border p-4 size ">US6</h4 >
+                <h4 class="my-auto border p-4 size ">US7</h4 >
+                <h4 class="my-auto border p-4 size ">US8</h4 >
+                <h4 class="my-auto border p-4 size "> US9</h4 >
+                   <h4 class="my-auto border p-4 bg-warning text-dark " id="add"> ADD+</h4 >
+                </div>
+              
+                <h6 class="mt-4">
+                FREEE DELIVERY SERVICE AT $150 AND STANDARD SHPPING
+                </h6>
+                </div>
+          </div>
+          </div>
+         
+          
+          
+        
+        
+        
+       
+        </div>
+        </div>
+    </div>
+    <script>
+      let size=document.getElementsByClassName("size");
+      console.log(size);
+      let add=document.getElementById("add")
+      let selectedSize="";
+      
+     add.addEventListener("click",()=>{
+      if(selectedSize==""){
+        alert("select the size");
+        
+      }
+      else{
+         alert("u are selected sizes is " + selectedSize);
+      }
+     })
+
+
+
+
+
+
+      for(let i=0;i<size.length;i++){
+        size[i].addEventListener("click",()=>{
+         
+          
+          if(!size[i].classList[4]){
+            size[i].classList.add("bg-danger");
+            selectedSize=size[i].innerText;
+            selectedSize=selectedSize.replace("US","")
+
+            for(j=0;j<size.length;j++){
+              if(i!=j)
+              { 
+                size[j].classList.remove("bg-danger");
+                
+                
+              }
+            }
+          }
+          else{
+            size[i].classList.remove("bg-danger");
+            selectedSize="";
+          }
+          
+          
+         
+        })
+       
+      }
+    
+      
+    </script>
+</body>
+</html>
